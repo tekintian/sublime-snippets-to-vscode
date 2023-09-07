@@ -28,7 +28,9 @@ sh convert_to_vscode.sh
 
 ~/Library/Application Support/Code/User/snippets
 
+##vscode snippets
 
+https://code.visualstudio.com/docs/editor/userdefinedsnippets
 
 
 
