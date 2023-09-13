@@ -2,7 +2,7 @@
 
 var commandLineArgs = require('command-line-args');
 
-var generator = require("./bin/convert-snippet-to-vscode.js");
+var generator = require("./bin/sublime-snippets-to-vscode.js");
 
 var cli = commandLineArgs([
     { name: 'snippetPath', alias: 's', type: String },

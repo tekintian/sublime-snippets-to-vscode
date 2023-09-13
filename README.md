@@ -1,15 +1,13 @@
-#批量转换sublime snippets到vscode snippets
+# 批量转换sublime snippets到vscode snippets
 
 # sublime snnippets batch convert to vscode snippets
-
-
 
 
 ## 批量转换sublime snippets to vscode snippets
 
 ~~~sh
-# 首先需要全局安装 
-cnpm install -g convert-snippets-to-vscode
+# 首先需要全局安装
+cnpm install -g sublime-snippets-to-vscode
 
 # 然后执行  自动转换sublime下的用户snippets 到vscode的用户snippets
 sh convert_to_vscode.sh
@@ -18,13 +16,13 @@ sh convert_to_vscode.sh
 
 
 
-- 默认sublime sinppets目录: 
+- 默认sublime sinppets目录:
 
 ~/Library/Application Support/Sublime Text 3/Packages/User/snippets
 
 
 
-- 默认vscode sinppets目录: 
+- 默认vscode sinppets目录:
 
 ~/Library/Application Support/Code/User/snippets
 
@@ -32,6 +30,36 @@ sh convert_to_vscode.sh
 
 https://code.visualstudio.com/docs/editor/userdefinedsnippets
 
+
+
+## dev and debug
+
+~~~sh
+git clone https://github.com/tekintian/sublime-snippets-to-vscode.git
+cd sublime-snippets-to-vscode
+npm install
+
+# open vscoe and run javascript debug terminal
+node index.js -s tests/ss -o tests/vs/test.json
+
+~~~
+
+
+
+## publish npm package
+
+~~~sh
+# https://www.npmjs.com/
+# 将仓库重置回官方仓库
+npm  config set registry registry.npmjs.org
+# 登录和发布
+npm  login
+npm  publish
+
+# 发布完成后替换回国内加速仓库
+npm  config set registry https://registry.npmmirror.com
+
+~~~
 
 
 ## Convert Textmate or Sublime Code Snippets to VSCode
@@ -43,11 +71,11 @@ One other difference from the [VSCode Yeoman generator](https://github.com/Micro
 ## Install the Converter
 
 ```bash
-npm install convert-snippets-to-vscode
+npm install sublime-snippets-to-vscode
 ```
 
 ```bash
-npm install -g convert-snippets-to-vscode
+npm install -g sublime-snippets-to-vscode
 ```
 
 
@@ -56,17 +84,17 @@ npm install -g convert-snippets-to-vscode
 To launch the converter and be prompted for info simply type:
 
 ```bash
-$ snippetToVsCode
+$ sublimeSnippetsToVsCode
 
 Folder location that contains Text Mate (.tmSnippet) and Sublime snippets (.sublime-snippet)
 ? Folder name: c:\temp\Snippets\Css
-? Output File Name: c:\temp\css.json 
+? Output File Name: c:\temp\css.json
 ```
 
 To launch to convert and pass in command line arguments:
 
 ```bash
-snippetToVsCode -s c:\temp\Snippets\Css -o c:\temp\css.json
+sublimeSnippetsToVsCode -s c:\temp\Snippets\Css -o c:\temp\css.json
 ```
 ## Converter Output
 
@@ -74,7 +102,7 @@ A json file with the converted templates in the vscode format.
 
 Take the generated file, add it to your VSCode Extension that you generated with [VSCode Yeoman generator](https://github.com/Microsoft/vscode-generator-code) in the snippets directory.
 
-Then update the package.json file in your VSCode Extension project with the new snippets file name and language that it supports. 
+Then update the package.json file in your VSCode Extension project with the new snippets file name and language that it supports.
 
 ## License
 
