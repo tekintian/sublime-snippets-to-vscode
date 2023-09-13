@@ -1,0 +1,19 @@
+<snippet>
+    <content><![CDATA[if (!function_exists('fdiv')) {
+    /**
+     * float dividend
+     * @param  float  \$dividend [description]
+     * @param  float  \$divisor  [description]
+     * @return [type]           [description]
+     */
+    function fdiv(float \$dividend, float \$divisor): float {
+        return @(\$dividend / \$divisor);
+    }
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>fn_fdiv</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.php</scope>
+    <description>float dividend</description>
+</snippet>
